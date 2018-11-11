@@ -17,22 +17,22 @@ import decimal
 # Helper Functions
 ####################################
 def roundHalfUp(d):
-	# Round to nearest with ties going away from zero.
-	rounding = decimal.ROUND_HALF_UP
-	# See other rounding options here:
-	# https://docs.python.org/3/library/decimal.html#rounding-modes
-	return int(decimal.Decimal(d).to_integral_value(rounding=rounding))
+    # Round to nearest with ties going away from zero.
+    rounding = decimal.ROUND_HALF_UP
+    # See other rounding options here:
+    # https://docs.python.org/3/library/decimal.html#rounding-modes
+    return int(decimal.Decimal(d).to_integral_value(rounding=rounding))
 
 
 # draws the cell given the following parameters
 def drawCell(canvas, data, row, col, color):
-	# calculate the coordinates based on the row and col
-	coordX1 = data.margin + col * data.cellSize
-	coordX2 = coordX1 + data.cellSize
-	coordY1 = data.margin + row * data.cellSize
-	coordY2 = coordY1 + data.cellSize
-	# draw the cell
-	canvas.create_rectangle(coordX1, coordY1, coordX2, coordY2,
+    # calculate the coordinates based on the row and col
+    coordX1 = data.margin + col * data.cellSize
+    coordX2 = coordX1 + data.cellSize
+    coordY1 = data.margin + row * data.cellSize
+    coordY2 = coordY1 + data.cellSize
+    # draw the cell
+    canvas.create_rectangle(coordX1, coordY1, coordX2, coordY2,
 							fill=color, outline="black",
 							width=4)
 
